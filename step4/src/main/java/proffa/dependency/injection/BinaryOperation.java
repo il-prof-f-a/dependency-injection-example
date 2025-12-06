@@ -8,7 +8,7 @@ public abstract class BinaryOperation {
         this.notifier = notifier;
     }
 
-    // TEMPLATE METHOD
+    // TEMPLATE METHOD: scheletro dell'algoritmo
     public void execute(double a, double b) {
         if (!validate(a, b)) {
             onValidationError(a, b);
@@ -19,6 +19,8 @@ public abstract class BinaryOperation {
         String message = formatMessage(a, b, result);
         notifier.notifyResult(message);
     }
+
+    // Hook methods (possono essere sovrascritti)
 
     protected boolean validate(double a, double b) {
         return true;
@@ -32,6 +34,7 @@ public abstract class BinaryOperation {
         return a + " " + getSymbol() + " " + b + " = " + result;
     }
 
+    // Metodi astratti specifici per ogni operazione
     protected abstract double compute(double a, double b);
 
     protected abstract String getSymbol();

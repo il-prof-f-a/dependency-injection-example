@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileNotifier implements Notifier {
-    private final String filePath;
+    private String filePath;
 
     public FileNotifier(String filePath) {
         this.filePath = filePath;

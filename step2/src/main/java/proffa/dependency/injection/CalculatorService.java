@@ -2,7 +2,7 @@ package proffa.dependency.injection;
 
 public class CalculatorService {
 
-    private final Notifier notifier;
+    private Notifier notifier;
 
     public CalculatorService(Notifier notifier) {
         this.notifier = notifier;
